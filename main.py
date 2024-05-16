@@ -18,11 +18,11 @@
 
 
 
-def bfs(start, end, shortCuts):
+def bfs(shortCuts):
     maxSize = len(shortCuts)
     mins = [float('inf')] * maxSize
-    mins[start] = 0
-    queue = [(start, 0)]
+    mins[0] = 0
+    queue = [(0, 0)]
     
     while len(queue) != 0:
         current_index, current_energy = queue.pop(0)
@@ -46,4 +46,4 @@ def bfs(start, end, shortCuts):
 
 _ = input()
 shortCuts = list(map(int, input().split()))
-print(bfs(0, len(shortCuts), shortCuts))
+print(bfs(shortCuts))
